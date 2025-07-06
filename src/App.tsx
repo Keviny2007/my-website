@@ -11,19 +11,19 @@ const projects = [
 	{
 		title: "Go Bots",
 		desc: "Multiple competitive Go bots, including a 5x5 bot that plays at 6d level, a 19x19 bot that plays at 2d level, and a 9x9 bot that plays at the beginner level.",
-		link: "https://github.com/yourgithub/gobot",
+		link: "https://github.com/Keviny2007/GoBot",
 		suit: suits[0],
 	},
 	{
 		title: "Court Checker",
 		desc: "A full-stack web app that shows basketball court availability at Brown using Django backend + React frontend, with calendar integration and dyanamic updates.",
-		link: "https://github.com/yourgithub/pickupcourt",
+		link: "https://github.com/Keviny2007/OMAC",
 		suit: suits[1],
 	},
 	{
 		title: "Model Architecture",
 		desc: "Reimplementations and fine-tuning of foundational models like GPT-2, seq2seq, and BERT in PyTorch to better understand architecture fundamentals and customize for research.",
-		link: "https://github.com/yourgithub/models",
+		link: "https://github.com/Keviny2007/llm",
 		suit: suits[2],
 	},
 ];
