@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { Typewriter } from "react-simple-typewriter";
 import { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
-import profilePic from "./assets/icons/pfp.JPG";
+import profilePic from "./assets/icons/pfp.jpg";
 import animationGif from "./assets/icons/giphy.gif";
 import cardBackTexture from "./assets/textures/card_back.png";
 
