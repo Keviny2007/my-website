@@ -250,7 +250,7 @@ export default function App() {
 											className="absolute inset-0 rounded-[1rem] overflow-hidden border-[1.5px] border-slate-700 flip-card-back bg-neutral-100"
 											style={{
 												backgroundImage:
-													{cardBackTexture},
+													`url(${cardBackTexture})`,
 												backgroundSize: '95% auto',
 												backgroundPosition: 'center',
 												backgroundRepeat: 'no-repeat',
