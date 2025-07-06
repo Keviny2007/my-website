@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import { Typewriter } from "react-simple-typewriter";
 import { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
+import profilePic from "./assets/icons/pfp.JPG";
+import animationGif from "./assets/icons/giphy.gif";
+import cardBackTexture from "./assets/textures/card_back.png";
 
 const suits = ["♠️", "♦️", "♣️", "♥️"];
 
@@ -58,7 +61,7 @@ export default function App() {
 					<div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto z-10 relative">
 						{/* Profile Picture */}
 						<img
-							src="/src/assets/icons/pfp.JPG"
+							src={profilePic}
 							alt="Kevin Yang"
 							className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-cyan-400 shadow-lg shadow-cyan-500/20 object-cover object-top"
 						/>
@@ -72,10 +75,10 @@ export default function App() {
 								<span className="text-cyan-400 mr-2">&gt;</span>
 								<Typewriter
 									words={[
-										"building cool stuff with code",
-										"building Go bots ⚫⚪",
-										"writing code ♘",
-										"breaking boundaries 🚀",
+										"teaching robots to make decisions",
+                    "typing furiously in terminal mode 💻",
+                    "debugging at 2AM with lo-fi beats ☕",
+                    "training models and muscles (kind of)",
 									]}
 									loop={true}
 									cursor
@@ -137,7 +140,7 @@ export default function App() {
 					<div className="w-full md:w-2/5 relative">
 						<div className="relative aspect-[1/1] w-full">
 							<img
-								src="/src/assets/icons/giphy.gif"
+								src={animationGif}
 								alt="Kevin Yang Animation"
 								className="w-full h-full object-cover rounded-lg shadow-lg"
 							/>
@@ -247,7 +250,7 @@ export default function App() {
 											className="absolute inset-0 rounded-[1rem] overflow-hidden border-[1.5px] border-slate-700 flip-card-back bg-neutral-100"
 											style={{
 												backgroundImage:
-													'url("/src/assets/textures/card_back.png")',
+													{cardBackTexture},
 												backgroundSize: '95% auto',
 												backgroundPosition: 'center',
 												backgroundRepeat: 'no-repeat',
