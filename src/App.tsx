@@ -7,6 +7,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import profilePic from "./assets/icons/pfp.jpg";
 import animationGif from "./assets/icons/giphy.gif";
 import cardBackTexture from "./assets/textures/card_back.png";
+import { motion } from "framer-motion";
 
 const suits = ["♠️", "♦️", "♣️", "♥️"];
 
@@ -34,6 +35,29 @@ const projects = [
 export default function App() {
 	const [flipped, setFlipped] = useState([false, false, false]);
 
+	const containerVariants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.3,
+				delayChildren: 0.4,
+			},
+		},
+	};
+
+	const itemVariants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.7,
+				ease: "easeOut",
+			},
+		},
+	};
+
 	const toggleFlip = (index: number) => {
 		const newFlipped = [...flipped];
 		newFlipped[index] = !newFlipped[index];
@@ -43,9 +67,17 @@ export default function App() {
 	return (
 		<div className="min-h-screen bg-background text-stark transition-colors">
 			<Navbar />
-			<main className="pt-24 px-6 py-10">
+			<motion.main
+				className="pt-24 px-6 py-10"
+				initial="hidden"
+				animate="visible"
+				variants={containerVariants}
+			>
 				{/* Header */}
-				<section className="relative flex items-center justify-center mb-20">
+				<motion.section
+					className="relative flex items-center justify-center mb-20"
+					variants={itemVariants}
+				>
 					{/* Left Emojis */}
 					<div className="hidden lg:flex gap-3 absolute left-12 xl:left-64 top-1/2 -translate-y-1/2 text-[4.5rem] xl:text-[5.5rem] opacity-40 lg:opacity-100 text-cyan-400 drop-shadow-[0_0_0.3rem_#38bdf8] pointer-events-none">
 						<span className="rotate-[-20deg] animate-float">⚫</span>
@@ -76,9 +108,9 @@ export default function App() {
 								<Typewriter
 									words={[
 										"teaching robots to make decisions",
-                    "typing furiously in terminal mode 💻",
-                    "debugging at 2AM with lo-fi beats ☕",
-                    "training models and muscles (kind of)",
+										"typing furiously in terminal mode 💻",
+										"debugging at 2AM with lo-fi beats ☕",
+										"training models and muscles (kind of)",
 									]}
 									loop={true}
 									cursor
@@ -129,13 +161,19 @@ export default function App() {
 							⚪
 						</span>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Animation & Terminal Section - Side by Side */}
-        <h2 className="text-3xl text-center font-terminal underline mb-6 drop-shadow-[0_0_0.2rem_#38bdf8]">
-						About Me
-				</h2>
-				<section className="flex flex-col md:flex-row gap-6 items-center justify-center my-12 max-w-6xl mx-auto">
+				<motion.h2
+					className="text-3xl text-center font-terminal underline mb-6 drop-shadow-[0_0_0.2rem_#38bdf8]"
+					variants={itemVariants}
+				>
+					About Me
+				</motion.h2>
+				<motion.section
+					className="flex flex-col md:flex-row gap-6 items-center justify-center my-12 max-w-6xl mx-auto"
+					variants={itemVariants}
+				>
 					{/* Animation Section - Left Side */}
 					<div className="w-full md:w-2/5 relative">
 						<div className="relative aspect-[1/1] w-full">
@@ -192,10 +230,14 @@ export default function App() {
 							</section>
 						</div>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Projects */}
-				<section id="projects" className="mb-24 font-terminal">
+				<motion.section
+					id="projects"
+					className="mb-24 font-terminal"
+					variants={itemVariants}
+				>
 					<h2 className="text-3xl text-center underline mb-6 drop-shadow-[0_0_0.2rem_#38bdf8]">
 						Projects
 					</h2>
@@ -205,10 +247,12 @@ export default function App() {
 					<div className="mx-auto max-w-6xl px-4">
 						<div className="grid md:grid-cols-3 gap-6 font-terminal">
 							{projects.map((project, i) => (
-								<div
+								<motion.div
 									key={i}
 									onClick={() => toggleFlip(i)}
 									className="cursor-pointer perspective-[1500px] hover:translate-y-[-5px] transition-transform"
+									variants={itemVariants}
+									custom={i}
 								>
 									<div
 										className={`relative w-full aspect-[7/10] duration-500 ease-in-out transition-transform flip-card ${
@@ -249,22 +293,25 @@ export default function App() {
 										<Card
 											className="absolute inset-0 rounded-[1rem] overflow-hidden border-[1.5px] border-slate-700 flip-card-back bg-neutral-100"
 											style={{
-												backgroundImage:
-													`url(${cardBackTexture})`,
-												backgroundSize: '95% auto',
-												backgroundPosition: 'center',
-												backgroundRepeat: 'no-repeat',
+												backgroundImage: `url(${cardBackTexture})`,
+												backgroundSize: "95% auto",
+												backgroundPosition: "center",
+												backgroundRepeat: "no-repeat",
 											}}
 										></Card>
 									</div>
-								</div>
+								</motion.div>
 							))}
 						</div>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Contact Section */}
-				<section id="contact" className="mb-24 font-terminal">
+				<motion.section
+					id="contact"
+					className="mb-24 font-terminal"
+					variants={itemVariants}
+				>
 					<h2 className="text-3xl text-center underline mb-6 drop-shadow-[0_0_0.2rem_#38bdf8]">
 						Contact
 					</h2>
@@ -303,20 +350,26 @@ export default function App() {
 							</a>
 						</div>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Footer */}
-				<div className="mt-16 border-t border-slate-700 pt-8">
+				<motion.div
+					className="mt-16 border-t border-slate-700 pt-8"
+					variants={itemVariants}
+				>
 					<p className="text-center text-slate-400 text-sm">
 						Thanks for visiting my website! Feel free to reach out if you have
 						any questions or just want to chat about tech!
 					</p>
-				</div>
-				<footer className="mt-16 text-center text-sm text-slate-400">
+				</motion.div>
+				<motion.footer
+					className="mt-16 text-center text-sm text-slate-400"
+					variants={itemVariants}
+				>
 					<p>© 2025 Kevin Yang. All rights reserved.</p>
 					<p>Built with ☕ using React and Tailwind CSS</p>
-				</footer>
-			</main>
+				</motion.footer>
+			</motion.main>
 		</div>
 	);
 }
