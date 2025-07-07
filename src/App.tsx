@@ -8,6 +8,7 @@ import profilePic from "./assets/icons/pfp.jpg";
 import animationGif from "./assets/icons/giphy.gif";
 import cardBackTexture from "./assets/textures/card_back.png";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 const suits = ["♠️", "♦️", "♣️", "♥️"];
 
@@ -35,7 +36,7 @@ const projects = [
 export default function App() {
 	const [flipped, setFlipped] = useState([false, false, false]);
 
-	const containerVariants = {
+	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
@@ -46,7 +47,7 @@ export default function App() {
 		},
 	};
 
-	const itemVariants = {
+	const itemVariants: Variants = {
 		hidden: { opacity: 0, y: 20 },
 		visible: {
 			opacity: 1,
