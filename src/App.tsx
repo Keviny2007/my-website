@@ -15,14 +15,14 @@ const suits = ["♠️", "♦️", "♣️", "♥️"];
 const projects = [
 	{
 		title: "Go Bots",
-		desc: "Multiple competitive Go bots, including a 5x5 bot that plays at 6d level, a 19x19 bot that plays at 2d level, and a 9x9 bot that plays at the beginner level.",
+		desc: "Multiple competitive Go bots, including a 5x5 bot that plays at 6d level and 19x19 bots that play at the 2-dan level (intermediate) and beginner level.",
 		link: "https://github.com/Keviny2007/GoBot",
 		suit: suits[0],
 	},
 	{
-		title: "Court Checker",
-		desc: "A full-stack web app that shows basketball court availability at Brown using Django backend + React frontend, with calendar integration and dyanamic updates.",
-		link: "https://github.com/Keviny2007/OMAC",
+		title: "Live Lyrics",
+		desc: "An open source mobile app that listens to live music and displays synchronized lyrics in real-time. Built using React Native, Expo, and the AudD API.",
+		link: "https://github.com/Keviny2007/livelyrics",
 		suit: suits[1],
 	},
 	{
@@ -30,6 +30,12 @@ const projects = [
 		desc: "Reimplementations and fine-tuning of foundational models like GPT-2, seq2seq, and BERT in PyTorch to better understand architecture fundamentals and customize for research.",
 		link: "https://github.com/Keviny2007/llm",
 		suit: suits[2],
+	},
+	{
+		title: "Court Checker",
+		desc: "A full-stack web app that shows basketball court availability at Brown using Django backend + React frontend, with calendar integration and dyanamic updates.",
+		link: "https://github.com/Keviny2007/OMAC",
+		suit: suits[3],
 	},
 ];
 
@@ -109,7 +115,7 @@ export default function App() {
 								<Typewriter
 									words={[
 										"teaching robots to make decisions",
-										"typing furiously in terminal mode 💻",
+										"typing furiously in vscode 💻",
 										"debugging at 2AM with lo-fi beats ☕",
 										"training models and muscles (kind of)",
 									]}
