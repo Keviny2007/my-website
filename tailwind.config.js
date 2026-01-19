@@ -1,28 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // Enable dark mode support
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
-      transform: ['hover'],
-      transformOrigin: {
-        'center': 'center',
-      },
       fontFamily: {
-        terminal: ['Share Tech Mono', 'monospace'],
-        custom: ['CustomFont', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        stark: {
-          DEFAULT: '#38bdf8', // Tailwind's cyan-400
-          light: '#67e8f9',
-          dark: '#0e7490', // for hover or accent
+        primary: {
+          DEFAULT: '#2563eb', // blue-600
+          light: '#3b82f6',   // blue-500
+          dark: '#1d4ed8',    // blue-700
         },
-        background: {
-          DEFAULT: '#0f172a', // deep slate
+        text: {
+          DEFAULT: '#1f2937', // gray-800
+          light: '#6b7280',   // gray-500
+          muted: '#9ca3af',   // gray-400
         },
       },
     },
