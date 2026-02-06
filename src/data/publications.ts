@@ -16,16 +16,23 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
-    title: "Less is More: On Data Redundancy in VLA Training for LIBERO",
+    title: "Less is More: On Data Redundancy in VLA Training",
     authors: ["Kevin Yang*", "Tony Yang*"],
     venue: "DATA-FM @ ICLR 2026",
     year: 2026,
     status: "under-review",
   },
   {
+    title: "Temporal Reversal Asymmetry: A Physics-Inspired Metric For Evaluation World Models",
+    authors: ["Kanpat Vesessook", "Kevin Yang"],
+    venue: "ICLR 2026 Workshop World Models",
+    year: 2026,
+    status: "under-review",
+  },
+  {
     title: "Towards Learning Representations of Policies in Games",
     authors: ["Kevin Yang*", "Kevin Wang*", "Arjun Prakash*"],
-    venue: "TBD",
+    venue: "Submitting to ICML 2026",
     year: 2026,
     status: "preprint",
   },
