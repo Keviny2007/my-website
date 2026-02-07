@@ -17,7 +17,7 @@ export const profile: Profile = {
   name: "Kevin Yang",
   affiliation: "Brown University",
   department: "Applied Mathematics & Computer Science",
-  bio: "Hi! I'm a 2nd year student at Brown University studying applied mathematics and computer science. My research interests include self-supervised learning, VLAs, and computer vision. There was a time I when I played Go professionally. In my free time, I enjoy playing basketball, working out, and being outdoors in general.",
+  bio: "Hi! I'm an undergraduate student at Brown University studying applied mathematics and computer science. My research interests include self-supervised learning, VLAs, and computer vision. There was a time I when I played Go professionally. In my free time, I enjoy playing basketball, working out, and being outdoors in general.",
   email: "kevin_c_yang@brown.edu",
   photo: "/src/assets/icons/pfp.jpg",
   links: {
