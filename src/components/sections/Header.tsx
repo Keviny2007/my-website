@@ -33,9 +33,9 @@ export default function Header() {
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-3xl font-bold text-text">{profile.name}</h1>
             <p className="text-primary font-medium mt-1">{profile.department}</p>
-            <p className="text-text-light">{profile.affiliation}</p>
+            <p className="text-black">{profile.affiliation}</p>
 
-            <p className="text-text-light mt-4 leading-relaxed max-w-2xl">
+            <p className="text-black mt-4 leading-relaxed max-w-2xl">
               {profile.bio}
             </p>
 

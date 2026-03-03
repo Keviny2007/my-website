@@ -1,4 +1,4 @@
-export type PublicationStatus = "published" | "preprint" | "under-review";
+export type PublicationStatus = "accepted" | "preprint" | "under-review";
 
 export interface Publication {
   title: string;
@@ -18,21 +18,21 @@ export const publications: Publication[] = [
   {
     title: "Less is More: On Data Redundancy in VLA Training",
     authors: ["Kevin Yang*", "Tony Yang*"],
-    venue: "DATA-FM @ ICLR 2026",
+    venue: "DATA-FM @ ICLR",
     year: 2026,
-    status: "under-review",
+    status: "accepted",
   },
   {
     title: "Temporal Reversal Asymmetry: A Physics-Inspired Metric For Evaluation World Models",
-    authors: ["Kanpat Vesessook", "Kevin Yang"],
-    venue: "ICLR 2026 Workshop World Models",
+    authors: ["Kanpat Vesessook*", "Kevin Yang*"],
+    venue: "ICLR Workshop World Models",
     year: 2026,
-    status: "under-review",
+    status: "accepted",
   },
   {
     title: "Towards Learning Representations of Policies in Games",
     authors: ["Kevin Yang*", "Kevin Wang*", "Arjun Prakash*"],
-    venue: "Submitting to ICML 2026",
+    venue: "Submitting to ICML",
     year: 2026,
     status: "preprint",
   },

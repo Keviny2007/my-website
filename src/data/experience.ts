@@ -8,16 +8,26 @@ export interface Experience {
   logo?: string;
 }
 
+import solidigmLogo from "@/assets/icons/solidigm.jpeg"
 import zpfLogo from "@/assets/icons/zpf.jpeg";
 import brownLogo from "@/assets/icons/brown.png";
 import dapustorLogo from "@/assets/icons/dapustor.jpeg";
 
 export const experiences: Experience[] = [
   {
+    title: "Incomoing Machine Learning Engineer Intern",
+    organization: "Solidigm",
+    location: "San Jose, CA",
+    period: "May 2026 – August 2026",
+    description: [],
+    type: "research",
+    logo: solidigmLogo,
+  },
+  {
     title: "Research Intern",
     organization: "AI² Robotics (Zhipingfang)",
     location: "Shenzhen, China",
-    period: "December 2025 – Present",
+    period: "December 2025 – February 2026",
     description: [],
     type: "research",
     logo: zpfLogo,

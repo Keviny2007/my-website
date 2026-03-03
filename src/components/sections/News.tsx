@@ -12,7 +12,7 @@ export default function News() {
         {news.map((item, index) => (
           <div key={index} className="flex gap-4 p-3 bg-gray-50 rounded-lg border border-gray-100">
             <span className="text-primary font-medium text-sm shrink-0 w-20">{item.date}</span>
-            <p className="text-text-light text-sm">
+            <p className="text-black text-sm">
               {item.link ? (
                 <a href={item.link} className="link" target="_blank" rel="noopener noreferrer">
                   {item.content}
