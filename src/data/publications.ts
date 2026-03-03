@@ -1,4 +1,4 @@
-export type PublicationStatus = "accepted" | "preprint" | "under-review";
+export type PublicationStatus = "published" | "preprint" | "under-review";
 
 export interface Publication {
   title: string;
@@ -20,14 +20,14 @@ export const publications: Publication[] = [
     authors: ["Kevin Yang*", "Tony Yang*"],
     venue: "DATA-FM @ ICLR",
     year: 2026,
-    status: "accepted",
+    status: "published",
   },
   {
     title: "Temporal Reversal Asymmetry: A Physics-Inspired Metric For Evaluation World Models",
     authors: ["Kanpat Vesessook*", "Kevin Yang*"],
     venue: "ICLR Workshop World Models",
     year: 2026,
-    status: "accepted",
+    status: "published",
   },
   {
     title: "Towards Learning Representations of Policies in Games",
