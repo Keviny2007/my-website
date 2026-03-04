@@ -8,7 +8,7 @@ export interface Experience {
   logo?: string;
 }
 
-import solidigmLogo from "@/assets/icons/solidigm.jpeg"
+// import solidigmLogo from "@/assets/icons/solidigm.jpeg"
 import zpfLogo from "@/assets/icons/zpf.jpeg";
 import brownLogo from "@/assets/icons/brown.png";
 import dapustorLogo from "@/assets/icons/dapustor.jpeg";
