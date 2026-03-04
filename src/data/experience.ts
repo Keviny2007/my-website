@@ -14,15 +14,15 @@ import brownLogo from "@/assets/icons/brown.png";
 import dapustorLogo from "@/assets/icons/dapustor.jpeg";
 
 export const experiences: Experience[] = [
-  {
-    title: "Incomoing Machine Learning Engineer Intern",
-    organization: "Solidigm",
-    location: "San Jose, CA",
-    period: "May 2026 – August 2026",
-    description: [],
-    type: "research",
-    logo: solidigmLogo,
-  },
+  // {
+  //   title: "Incoming Machine Learning Engineer Intern",
+  //   organization: "Solidigm",
+  //   location: "San Jose, CA",
+  //   period: "May 2026 – August 2026",
+  //   description: [],
+  //   type: "research",
+  //   logo: solidigmLogo,
+  // },
   {
     title: "Research Intern",
     organization: "AI² Robotics (Zhipingfang)",
