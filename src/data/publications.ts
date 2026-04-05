@@ -6,6 +6,7 @@ export interface Publication {
   venue?: string;
   year: number;
   status: PublicationStatus;
+  thumbnail?: string;
   links?: {
     paper?: string;
     code?: string;
@@ -14,6 +15,10 @@ export interface Publication {
   abstract?: string;
 }
 
+import traThumbnail from "@/assets/icons/portfolio_tra.png";
+import tssThumbnail from "@/assets/icons/tss.png";
+import taeThumbnail from "@/assets/icons/portfolio_tae.png"
+
 export const publications: Publication[] = [
   {
     title: "Less is More: On Data Redundancy in VLA Training",
@@ -21,6 +26,8 @@ export const publications: Publication[] = [
     venue: "DATA-FM @ ICLR",
     year: 2026,
     status: "published",
+    thumbnail: tssThumbnail,
+    links: { paper: "https://openreview.net/pdf?id=bG8gPlSYvg" },
   },
   {
     title: "Temporal Reversal Asymmetry: A Physics-Inspired Metric For Evaluation World Models",
@@ -28,6 +35,8 @@ export const publications: Publication[] = [
     venue: "ICLR Workshop World Models",
     year: 2026,
     status: "published",
+    thumbnail: traThumbnail,
+    links: { paper: "https://openreview.net/attachment?id=WVaRlnc23g&name=pdf" },
   },
   {
     title: "Towards Learning Representations of Policies in Games",
@@ -35,6 +44,7 @@ export const publications: Publication[] = [
     venue: "Submitting to ICML",
     year: 2026,
     status: "preprint",
+    thumbnail: taeThumbnail
   },
   {
     title: "Multi-Sensor Actigraphy: Improving Sleep-Wake Detection with a Multi-Limb Approach",

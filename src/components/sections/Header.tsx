@@ -1,78 +1,62 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import { FileText, Mail, Building2, FlaskConical } from "lucide-react";
 import { profile } from "@/data/profile";
-import profilePic from "@/assets/icons/pfp.jpg";
+import { experiences } from "@/data/experience";
 
-const fadeInVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
-export default function Header() {
+function EmailButton({ email }: { email: string }) {
+  const [user, domain] = email.split("@");
+  const [host, ...tldParts] = domain.split(".");
+  const tld = tldParts.join(".");
   return (
-    <motion.header
-      className="max-w-5xl mx-auto px-6 pt-24 pb-8"
-      initial="hidden"
-      animate="visible"
-      variants={fadeInVariants}
-    >
-      <div className="card-padded">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <img
-            src={profilePic}
-            alt={profile.name}
-            className="w-40 h-64 rounded-xl object-cover object-top shadow-md"
-          />
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-3xl font-bold text-text">{profile.name}</h1>
-            <p className="text-primary font-medium mt-1">{profile.department}</p>
-            <p className="text-black">{profile.affiliation}</p>
+    <a href={`mailto:${email}`} className="icon-btn">
+      <Mail size={16} className="icon-btn-icon" />
+      <span>
+        <span className="icon-btn-main">{user}</span>
+        {" "}<span className="icon-btn-muted">at</span>{" "}
+        <span className="icon-btn-main">{host}</span>
+        {" "}<span className="icon-btn-muted">dot</span>{" "}
+        <span className="icon-btn-main">{tld}</span>
+      </span>
+    </a>
+  );
+}
 
-            <p className="text-black mt-4 leading-relaxed max-w-2xl">
-              {profile.bio}
-            </p>
+export default function About() {
+  return (
+    <section id="about" className="content-section">
+      <div className="container">
+        <h2 className="section-title">About</h2>
+        <p>{profile.bio}</p>
 
-            <div className="flex gap-3 mt-6 justify-center md:justify-start">
-              {profile.links.github && (
-                <a
-                  href={profile.links.github}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-text-light hover:text-text transition-colors text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
-              )}
-              {profile.links.linkedin && (
-                <a
-                  href={profile.links.linkedin}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-text-light hover:text-text transition-colors text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </a>
-              )}
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark rounded-lg text-white transition-colors text-sm"
-              >
-                <Mail className="h-4 w-4" />
-                Email
-              </a>
-            </div>
-          </div>
+        <div className="about-links">
+          <a href="/Kevin_Resume.pdf" target="_blank" rel="noopener noreferrer" className="icon-btn">
+            <FileText size={16} className="icon-btn-icon" />
+            <span className="icon-btn-main">CV</span>
+          </a>
+          <a href="https://scholar.google.com/citations?user=PNJSQjQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="icon-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" className="icon-btn-icon" fill="currentColor">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/>
+            </svg>
+            <span className="icon-btn-main">Google Scholar</span>
+          </a>
+          <EmailButton email={profile.email} />
         </div>
+
+        <h3 className="exp-inline-heading">Recent Experiences</h3>
+        <ul className="exp-inline-list">
+          {experiences.map((exp, index) => (
+            <li key={index} className="exp-inline-item">
+              {exp.type === "research" ? (
+                <FlaskConical size={15} className="exp-inline-icon" />
+              ) : (
+                <Building2 size={15} className="exp-inline-icon" />
+              )}
+              <span>
+                {exp.title}, <strong>{exp.organization}</strong>, {exp.period}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
-    </motion.header>
+    </section>
   );
 }
